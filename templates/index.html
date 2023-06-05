@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ChatGPT Web</title>
+</head>
+<body>
+    <form action="/" method="POST">
+        <input type="text" name="input_text" id="input_text_id">
+        <button type="submit" name="send">Send</button>
+    </form>
+
+    {% if result %}
+    <div>
+        {% for message in result %}
+        	<p> {{ message }}</p>
+		{% endfor %}
+    </div>
+	{% endif %}
+
+    <script>
+        document.getElementById('input_text_id').focus();
+    </script>
+</body>
+</html>
